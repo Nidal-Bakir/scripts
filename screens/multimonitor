@@ -1,0 +1,19 @@
+#!/bin/sh
+# Wrapper script for extramonitor
+
+option=`echo  "disconnect\nextra\nduplicate" | dmenu -i -p "Monitor Configuration"`
+
+case $option in 
+  disconnect)
+    
+    xrandr --output "HDMI1" --off --output "eDP1" --auto
+      ;;
+  extra)
+
+    xrandr | grep 'HDMI1 connected' && xrandr --output "eDP1"  --auto --output "HDMI1"  --auto --above "eDP1" 
+    ;;
+  duplicate)
+  
+    xrandr | grep 'HDMI1 connected' &&  xrandr --output eDP1 --auto --output HDMI1 --auto --same-as eDP1
+    ;;
+esac
