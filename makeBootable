@@ -1,6 +1,19 @@
-#!/bin/bash
+#!/bin/sh
+
 iso_path=""
 flash_mount_point="" # e.g: /dev/sdb1  use lsblk to know for sure!
+
+Help() {    # Display Help
+   echo "make bootable usb using dd command.please use this script with extra care, it may delete all your data or currupt your system"
+   echo "Please use this script with extra care, it may delete all your data or currupt your system."
+   echo
+   echo "Syntax: makeBootable <-f <path> -o <path> >|-h "
+   echo "options:"
+   echo "f     path to iso file."
+   echo "o     path to usb mount point. hint: use lsblk to know the mounting point."
+   echo "v     print this help message."
+   echo
+}
 
 # Get the options
 while getopts :f:o: option; do
@@ -9,7 +22,10 @@ while getopts :f:o: option; do
         iso_path=$OPTARG;;
       o) # flash mount point
          flash_mount_point=$OPTARG;;
-     \?) # Invalid option
+      h) # dispaly help message
+         help 
+         exit;;
+      \?) # Invalid option
          echo "Error: Invalid option"
          exit;;
    esac
