@@ -1,0 +1,14 @@
+#!/bin/sh
+
+profile=`echo "power\nbalance\npeformance" | dmenu -i -p "tlp profile"`
+case $profile in
+  power)
+    cat  /home/nidal/scripts/tlp_profiles/power >> /etc/tlp.conf && sudo tlp start bat
+    ;;
+  balance)
+    cat  /home/nidal/scripts/tlp_profiles/balance >> /etc/tlp.conf && sudo tlp start
+    ;;
+  peformance)
+    cat /home/nidal/scripts/tlp_profiles/performance >> /etc/tlp.conf && sudo tlp start ac
+    ;;
+esac
