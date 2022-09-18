@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#i3lock -eft -i $HOME/Pictures/lock_screen.png
+betterlockscreen -q -l dim 

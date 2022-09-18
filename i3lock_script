@@ -1,3 +1,0 @@
-#!/bin/sh
-
-i3lock -eft -i $HOME/mynidal/img/HD/9.png

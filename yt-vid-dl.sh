@@ -16,10 +16,10 @@ Help() {    # Display Help
 # Get the options
 while getopts :r:u:h option; do
    case $option in
-      r) # path to iso file 
+     r) # resolution
         res=$OPTARG
         ;;
-      u) # flash mount point
+      u) # the url
          url=$OPTARG
          ;;
       h) # dispaly help message

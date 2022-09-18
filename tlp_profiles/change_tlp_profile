@@ -1,10 +1,10 @@
 #!/bin/sh
 
-profile=`echo "default\npower\nbalance\npeformance" | dmenu -i -p "tlp profile"`
+profile=`echo "power\nbalance\npeformance" | dmenu -i -p "tlp profile"`
 case $profile in
-  default)
-    cat  /home/nidal/scripts/tlp_profiles/tlp_old.conf >> /etc/tlp.conf && sudo tlp start bat
-    ;;
+ # default)
+  #  cat  /home/nidal/scripts/tlp_profiles/tlp_old.conf >> /etc/tlp.conf && sudo tlp start 
+ #   ;;
   power)
     cat  /home/nidal/scripts/tlp_profiles/power >> /etc/tlp.conf && sudo tlp start bat
     ;;
