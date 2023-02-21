@@ -36,5 +36,6 @@ done
 
 
 
-yt-dlp -N 8 -if  "bestvideo[height<=$res]+bestaudio/best[height<=$res]" $url
+#yt-dlp -N 4 -if  "bestvideo[height<=$res]+bestaudio/best[height<=$res]" $url
 
+yt-dlp -N 4 -S  "height:$res,ext:mp4,aext:m4a" $url
