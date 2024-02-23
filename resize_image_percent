@@ -1,0 +1,3 @@
+#!/bin/sh
+
+convert -resize $1 $2 resized_image.png

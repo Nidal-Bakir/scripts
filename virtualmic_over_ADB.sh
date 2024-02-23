@@ -1,6 +1,6 @@
 adb connect 192.168.1.25:5555
 
-adb forward tcp:8080 tcp:8080
+adb -s "192.168.1.25:5555" forward tcp:8080 tcp:8080
 echo "\nForwarded device port 8080 to localhost port 8080\n"
 
 red='\033[31m'

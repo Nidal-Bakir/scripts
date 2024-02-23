@@ -1,0 +1,3 @@
+#!/bin/sh
+
+convert +append $1 $2 h_out.png
