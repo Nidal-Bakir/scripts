@@ -1,0 +1,3 @@
+#!/bin/sh
+
+speedtest-cli --no-upload --bytes --no-pre-allocate
